@@ -13,6 +13,7 @@ void print_python_list(PyObject *p)
 	const char *type;
 	PyListObject *list = (PyListObject *)p;
 	PyVarObject *var = (PyVarObject *)p;
+
 	size = var->ob_size;
 	alloc = list->allocated;
 	fflush(stdout);
@@ -42,6 +43,7 @@ void print_python_bytes(PyObject *p)
 {
 	Py_ssize_t size, i;
 	PyBytesObject *bytes = (PyBytesObject *)p;
+
 	fflush(stdout);
 	printf("[.] bytes object info\n");
 	if (strcmp(p->ob_type->tp_name, "bytes") != 0)
@@ -73,6 +75,7 @@ void print_python_float(PyObject *p)
 {
 	char *buffer = NULL;
 	PyFloatObject *float_obj = (PyFloatObject *)p;
+
 	fflush(stdout);
 	printf("[.] float object info\n");
 	if (strcmp(p->ob_type->tp_name, "float") != 0)
